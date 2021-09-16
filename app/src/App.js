@@ -1,5 +1,6 @@
 import "./App.css";
 import TechJobItem from "./component/FilterTechItem";
+import JobItem from "./component/JobItem";
 
 function App() {
      return (
@@ -12,8 +13,11 @@ function App() {
                     </div>
                </header>
                <section className="app-section">
-                    <div className="list-job">
-                         <div className="job-item" />
+                    <div className="list-jobs">
+                         <JobItem />
+                         <JobItem />
+                         <JobItem />
+                         <JobItem />
                     </div>
                </section>
           </div>
