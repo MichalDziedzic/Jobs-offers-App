@@ -1,21 +1,21 @@
 import "./App.css";
+import TechJobItem from "./component/FilterTechItem";
 
 function App() {
      return (
-          <div className="App">
-               <header className="App-header">
-                    <p>
-                         Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                         className="App-link"
-                         href="https://reactjs.org"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                    >
-                         Learn React
-                    </a>
+          <div className="app">
+               <header className="app-header">
+                    <div className="filter-bar">
+                         <TechJobItem />
+                         <TechJobItem />
+                         <TechJobItem />
+                    </div>
                </header>
+               <section className="app-section">
+                    <div className="list-job">
+                         <div className="job-item" />
+                    </div>
+               </section>
           </div>
      );
 }
