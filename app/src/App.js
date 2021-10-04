@@ -1,27 +1,44 @@
 import "./App.css";
-import TechJobItem from "./component/FilterTechItem";
+import TechJobTag from "./component/TechJobTag";
 import JobItem from "./component/JobItem";
 import styled from "styled-components";
-import data from "../src/data/data.json";
+import data from "./data/data";
+import bgHeader from "./images/bg-header-desktop.svg";
+//
 const Container = styled.div`
-     background: red;
+     background: hsl(180, 8%, 52%);
+     width: 100%;
+     margin: 0;
+     padding: 0;
 `;
 
 const Header = styled.div`
-     background: blue;
+     background-image: url(${bgHeader});
+     background-size: cover;
+     background-repeat: no-repeat;
+     height: 20vh;
+     width: 100%;
 `;
-const Section = styled.div``;
+const Section = styled.div`
+     background: hsl(180, 52%, 96%);
+     width: 100%;
+     height: auto;
+`;
 
-const JobsWrapper = styled.div``;
+const JobsWrapper = styled.div`
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+`;
 const FilterOffer = styled.div``;
 
 const App = () => {
-     console.log(data);
      return (
           <Container>
                <Header>
                     <FilterOffer>
-                         <TechJobItem />
+                         <TechJobTag />
                     </FilterOffer>
                </Header>
                <Section>
@@ -31,6 +48,7 @@ const App = () => {
                                    key={el.id}
                                    company={el.company}
                                    position={el.position}
+                                   logo={el.logo}
                               />
                          ))}
                     </JobsWrapper>
