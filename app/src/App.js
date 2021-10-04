@@ -23,6 +23,8 @@ const Section = styled.div`
      background: hsl(180, 52%, 96%);
      width: 100%;
      height: auto;
+     display: flex;
+     justify-content: center;
 `;
 
 const JobsWrapper = styled.div`
@@ -30,6 +32,8 @@ const JobsWrapper = styled.div`
      justify-content: center;
      flex-direction: column;
      align-items: center;
+     background: pink;
+     width: 80%;
 `;
 const FilterOffer = styled.div``;
 
@@ -49,6 +53,7 @@ const App = () => {
                                    company={el.company}
                                    position={el.position}
                                    logo={el.logo}
+                                   dataTech={el.languages}
                               />
                          ))}
                     </JobsWrapper>

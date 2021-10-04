@@ -1,26 +1,39 @@
 import React from "react";
 import TechJobTag from "./TechJobTag";
 import styled from "styled-components";
+
 const JobContainer = styled.div`
-     background: red;
-     width: 80%;
+     width: 100%;
      display: flex;
+     background: red;
 `;
-// const LogoImg = styled.img``;
+const LogoImg = styled.img`
+     width: 100px;
+     background-size: cover;
+     height: 100px;
+`;
+
+const JobTags = styled.div`
+     width: 10px;
+     height:10px
+     display: flex;
+     flex-direction: column;
+`;
+
 const JobItem = (props) => {
-     console.log(props);
+     const { logo, id, company, position, dataTech } = { ...props };
+     const dataTechnologies = dataTech.map((tech) => (
+          <TechJobTag technology={tech} />
+     ));
+     console.log(dataTechnologies);
      return (
           <JobContainer>
-               <img src={props.logo} key={props.id} alt="logo" />
+               <LogoImg src={logo} key={id} alt={company} />
                <div className="job-item-desc">
-                    <p className="company-name">{props.company}</p>
-                    <h3 className="job-title">{props.position}</h3>
+                    <p className="company-name">{company}</p>
+                    <h3 className="job-title">{position}</h3>
                </div>
-               <div className="job-tags">
-                    <TechJobTag />
-                    <TechJobTag />
-                    <TechJobTag />
-               </div>
+               <JobTags>{dataTechnologies}</JobTags>
           </JobContainer>
      );
 };

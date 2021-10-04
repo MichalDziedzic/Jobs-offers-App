@@ -1,6 +1,15 @@
 import React from "react";
-
-const TechJobTag = (props) => {
-     return <span>techName1</span>;
+import styled from "styled-components";
+const TechJob = styled.p`
+     width: 100%;
+     height: auto;
+     color: blue;
+`;
+const TechJobTag = ({ technology }) => {
+     return (
+          <>
+               <TechJob>{technology}</TechJob>
+          </>
+     );
 };
 export default TechJobTag;
