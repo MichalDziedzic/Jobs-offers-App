@@ -41,7 +41,7 @@ const JobsData = [
      },
      {
           id: 3,
-          company: Account,
+          company: "Account",
           logo: Account,
           new: true,
           featured: false,

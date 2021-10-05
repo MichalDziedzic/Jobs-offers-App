@@ -32,7 +32,6 @@ const JobsWrapper = styled.div`
      justify-content: center;
      flex-direction: column;
      align-items: center;
-     background: pink;
      width: 80%;
 `;
 const FilterOffer = styled.div``;

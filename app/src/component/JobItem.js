@@ -5,34 +5,48 @@ import styled from "styled-components";
 const JobContainer = styled.div`
      width: 100%;
      display: flex;
-     background: red;
 `;
 const LogoImg = styled.img`
      width: 100px;
      background-size: cover;
      height: 100px;
 `;
-
-const JobTags = styled.div`
-     width: 10px;
-     height:10px
+const LogoWrapper = styled.div`
+     width: 20%;
      display: flex;
-     flex-direction: column;
+     justify-content: center;
+     align-items: center;
 `;
-
+const JobTags = styled.div`
+     width: 40%;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: flex-end;
+`;
+const JobsTitle = styled.h3`
+     color: purple;
+`;
+const CompanyTitle = styled.h3`
+     color: purple;
+`;
+const JobItemDesc = styled.h3`
+     width: 40%;
+`;
 const JobItem = (props) => {
      const { logo, id, company, position, dataTech } = { ...props };
      const dataTechnologies = dataTech.map((tech) => (
           <TechJobTag technology={tech} />
      ));
-     console.log(dataTechnologies);
      return (
           <JobContainer>
-               <LogoImg src={logo} key={id} alt={company} />
-               <div className="job-item-desc">
-                    <p className="company-name">{company}</p>
-                    <h3 className="job-title">{position}</h3>
-               </div>
+               <LogoWrapper>
+                    <LogoImg src={logo} key={id} alt={company} />
+               </LogoWrapper>
+               <JobItemDesc>
+                    <CompanyTitle>{company}</CompanyTitle>
+                    <JobsTitle>{position}</JobsTitle>
+               </JobItemDesc>
                <JobTags>{dataTechnologies}</JobTags>
           </JobContainer>
      );

@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 const TechJob = styled.p`
-     width: 100%;
+     padding: 10px;
+     border-radius: 25px;
+     background: grey;
      height: auto;
      color: blue;
 `;
